@@ -37,8 +37,8 @@ pipeline {
               
               
                unzip apache-tomcat-8.5.94.zip
-               cp  /var/lib/jenkins/workspace/my-first-job/Maven-Build-Student/target/studentapp-2.2-SNAPSHOT.war /var/lib/jenkins/workspace/project/apache-tomcat-8.5.94/webapps/
-               mv /var/lib/jenkins/workspace/my-first-job/apache-tomcat-8.5.94/webapps/studentapp-2.2-SNAPSHOT.war /var/lib/jenkins/workspace/project/apache-tomcat-8.5.94/webapps/studentapp.war
+               cp  /var/lib/jenkins/workspace/my-first-job/Maven-Build-Student/target/studentapp-2.2-SNAPSHOT.war /var/lib/jenkins/workspace/my-first-job/apache-tomcat-8.5.94/webapps/
+               mv /var/lib/jenkins/workspace/my-first-job/apache-tomcat-8.5.94/webapps/studentapp-2.2-SNAPSHOT.war /var/lib/jenkins/workspace/my-first-job/apache-tomcat-8.5.94/webapps/studentapp.war
                chmod -R +x /var/lib/jenkins/workspace/my-first-job/apache-tomcat-8.5.94/bin/
               cd /var/lib/jenkins/workspace/my-first-job/apache-tomcat-8.5.94/bin/
                ./startup.sh  
