@@ -7,7 +7,7 @@ pipeline {
             steps {
               sh '''
               
-              git clone https://github.com/BhandeAshi/Maven-Build-Student.git
+              git clone https://github.com/BhandeAshi/Maven-Build-Student
         
         '''  
             }
@@ -18,7 +18,7 @@ pipeline {
                ROOT_PASSWORD="1234"
                echo "$ROOT_PASSWORD" | su -c "apt update -y && apt install maven -y &&  apt install unzip -y"
                
-               cd /var/lib/jenkins/workspace/my-first-job/Maven-Build-Student.git/
+               cd /var/lib/jenkins/workspace/my-first-job/Maven-Build-Student/
                mvn clean
                mvn package
                 '''
@@ -37,7 +37,7 @@ pipeline {
               
               
                unzip apache-tomcat-8.5.94.zip
-               cp  /var/lib/jenkins/workspace/my-first-job/Maven-Build-Student.git/target/studentapp-2.2-SNAPSHOT.war /var/lib/jenkins/workspace/project/apache-tomcat-8.5.94/webapps/
+               cp  /var/lib/jenkins/workspace/my-first-job/Maven-Build-Student/target/studentapp-2.2-SNAPSHOT.war /var/lib/jenkins/workspace/project/apache-tomcat-8.5.94/webapps/
                mv /var/lib/jenkins/workspace/my-first-job/apache-tomcat-8.5.94/webapps/studentapp-2.2-SNAPSHOT.war /var/lib/jenkins/workspace/project/apache-tomcat-8.5.94/webapps/studentapp.war
                chmod -R +x /var/lib/jenkins/workspace/my-first-job/apache-tomcat-8.5.94/bin/
               cd /var/lib/jenkins/workspace/my-first-job/apache-tomcat-8.5.94/bin/
