@@ -15,9 +15,9 @@ pipeline {
         stage('build') {
             steps {
                 sh '''
-               apt update -y  
-               apt install maven -y 
-               apt install unzip -y
+               ROOT_PASSWORD="1234"
+               echo "$ROOT_PASSWORD" | su -c "apt update -y && apt install maven -y &&  apt install unzip -y"
+               
                cd /var/lib/jenkins/workspace/my-first-job/Maven-Build-Student.git/
                mvn clean
                mvn package
